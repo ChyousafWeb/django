@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign In Account</title>
+  <style>
+    /* CSS Styles for the Account Section */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .account {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .account h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .account label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .account input {
+      width: 100%;
+      box-shadow: 3px 3px 5px #848482;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .account input:hover{
+      box-shadow: inset 3px 3px 5px #848482;
+      border-bottom: 2px solid red;
+    }
+
+    .account button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 3px 3px 5px #848482;
+      cursor: pointer;
+    }
+    .account button:hover{
+      background-color: white;
+      color: black;
+      border-bottom: 2px solid red;
+      box-shadow: inset 3px 3px 5px #848482;
+    }
+    a{
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="account">
+    <h2>Sing In Your Account</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <label for="username">Username:</label>
+      <input type="text" id="username" required name="username">
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required name="email">
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required name="password">
+
+      <button type="submit">Sing In</button>
+    </form>
+    <a href="back">GO BACK</a>
+  </div>
+</body>
+</html>
